@@ -41,7 +41,7 @@ The starter-code is structured like this:
 ```
 .
 └── app
-    ├── app.js
+    ├── server.js
     ├── config
     │   ├── passport.js
     │   └── routes.js
@@ -82,7 +82,7 @@ The statics controller, just has the home action.
 
 #### Routes.js
 
-We have separated the routes into a separate file, to remove them from the `app.js` file.
+We have separated the routes into a separate file, to remove them from the `server.js` file.
 
 #### Signup
 
@@ -255,7 +255,7 @@ function getSignup(req, res) {
 }
 ```
 
-Now, start up the app using `nodemon app.js` and visit `http://localhost:3000/signup` and try to signup two times with the same email, you should see the message "This email is already used." appearing when the form is reloaded.
+Now, start up the app using `nodemon server.js` and visit `http://localhost:3000/signup` and try to signup two times with the same email, you should see the message "This email is already used." appearing when the form is reloaded.
 
 
 ## Test it out - Independent Practice
@@ -382,7 +382,7 @@ The last action to implement for our authentication system is to set the logout 
 
 #### Accessing the User object globally
 
-By default, passport will make the user available on the object `request`. In most cases, we want to be able to use the user object everywhere, for that, we're going to add a middleware in `app.js`:
+By default, passport will make the user available on the object `request`. In most cases, we want to be able to use the user object everywhere, for that, we're going to add a middleware in `server.js`:
 
 ```javascript
 require('./config/passport')(passport);
