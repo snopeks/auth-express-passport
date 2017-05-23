@@ -27,21 +27,21 @@ _In modern web applications, authentication can take a variety of forms. Traditi
 
 The main concept when using passport is to register _Strategies_.  A strategy is a passport Middleware that will create some action in the background and execute a callback; the callback should be called with different arguments depending on whether the action that has been performed in the strategy was successful or not. Based on this and on some config params, passport will redirect the request to different paths.
 
-Because strategies are packaged as individual modules, we can pick and choose what modules we need for our application. This logic allows the developer to keep the code simple - without unnecessary dependencies - in the controller and delegate the proper authentication job to some specific passport code. On a high-level, you can think of the passport module as authentication middleware the app uses and any passport strategy module (`passpor-*`) as detailed authentication middleware that passport itself uses.
+Because strategies are packaged as individual modules, we can pick and choose what modules we need for our application. This logic allows the developer to keep the code simple - without unnecessary dependencies - in the controller and delegate the proper authentication job to some specific passport code. On a high-level, you can think of the passport module as authentication middleware the app uses and any passport strategy module (`passport-*`) as detailed authentication middleware that passport itself uses.
 
 
 ## Implementing Passport.js - Codealong
 
 #### Setup/Review Starter Code
 
-First, unzip the starter code and setup with `npm install` to ensure that we have all of the correct dependencies.
+First, clone the starter code and setup with `npm install` to ensure that we have all of the correct dependencies.
 
 The starter-code is structured like this:
 
 ```
 .
 └── app
-    ├── app.js
+    ├── server.js
     ├── config
     │   ├── passport.js
     │   └── routes.js
@@ -63,7 +63,7 @@ The starter-code is structured like this:
 7 directories, 12 files
 ```
 
-Now let's open the code up in Sublime with `subl .`.
+Now let's open the code up in Atom with `atom .`.
 
 #### Users & Statics Controller
 
@@ -82,7 +82,7 @@ The statics controller, just has the home action.
 
 #### Routes.js
 
-We have separated the routes into a separate file, to remove them from the `app.js` file.
+We have separated the routes into a separate file, to remove them from the `server.js` file.
 
 #### Signup
 
@@ -537,8 +537,3 @@ Passport is a really useful tool because it allows developers to abstract the lo
 
 - How do salts work with hashing?
 - Briefly describe the authentication process using passport in Express.
-
-
-
-
-

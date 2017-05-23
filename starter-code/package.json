@@ -2,7 +2,7 @@
   "name": "local-auth-passport-lab",
   "version": "0.0.1",
   "description": "WDI lab about implementing passport with mongoose and express",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +21,6 @@
     "passport": "~0.1.17",
     "passport-local": "~0.1.6"
   },
-  "author": "gerry Mathe",
+  "author": "Justin Castilla",
   "license": "ISC"
 }
