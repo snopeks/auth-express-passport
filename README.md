@@ -1,4 +1,4 @@
-# Local Authentication with Express and Passport
+# Local Authentication with Express and Passport - GA WDI example
 
 ### Objectives
 *After this lesson, students will be able to:*
@@ -163,7 +163,7 @@ In the first situation we pass `false` as the second argument, in the second cas
 The last thing is to add the method `encrypt` to the user model to hash the password received and save it as encrypted:
 
 ```javascript
-User.statics.encrypt = function(password) {
+userSchema.statics.encrypt = function(password) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 ```
@@ -273,7 +273,7 @@ passport.use('local-login', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
   passReqToCallback: true
-}, function(req, email, password, callback) {
+}, function(req, email, password, done) {
 
 }));
 ```
@@ -286,7 +286,7 @@ Inside `config/passport.js` let's add this code:
 
 ```javascript
 ...
-}, function(req, email, password, callback) {
+}, function(req, email, password, done) {
 
   // Search for a use with this email
   User.findOne({ 'local.email': email }, function(err, user) {
